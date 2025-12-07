@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cart | Flash Shop</title>
     <link rel="stylesheet" href="style.css">
@@ -29,7 +30,7 @@
                     </a>
                 </li>
                 <li class="list-item-inline">
-                    <a href="./cart.html" class="link cursor">
+                    <a href="/" class="link cursor">
                         <span class="nav-icon material-icons-outlined">
                             shopping_cart
                             </span>
@@ -39,9 +40,37 @@
         </nav>
     </header>
     <main class="main">
-        <h2 class="heading-2">Your Cart</h2>
-        <div class="product-container d-flex wrap gap" id="products"></div>
+        <h2 class="heading-2 d-flex justify-center">Your Cart</h2>
+        <main class="d-flex gap justify-center">
+            <div class=" d-flex direction-column wrap gap" id="cart"></div>
+            <div class="final-price d-flex direction-column gap shadow padding-all-16">
+                <div>Price Details</div>
+                <div class="d-flex align-center justify-space-between">
+                    <span>Price (<span class="item-count"></span>) items</span>
+                    <span>Rs. <span class="product-price"></span></span>
+                </div>
+                <div class="d-flex align-center justify-space-between">
+                    <span>Discount</span>
+                    <span>Rs. <span class="discounted-amount"></span></span>
+                </div>
+                <div class="d-flex align-center justify-space-between">
+                    <span>Delivery Charge</span>
+                    <span>Rs. 100</span>
+                </div>
+                <div class="d-flex align-center justify-space-between">
+                    <span>Total Amount</span>
+                    <span>Rs. <span class="total-amount"></span></span>
+                </div>
+                <div>
+                    You will save Rs. <span class="discounted-amount"></span> on this order
+                </div>
+                <button class="button btn-primary cursor">
+                    Place Order
+                </button>
+            </div>
+        </main>
+        
     </main>
-    <script src="./cart.js"></script>
+    <script type="module" src="./cart.js"></script>
 </body>
 </html>
