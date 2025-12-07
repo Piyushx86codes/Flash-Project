@@ -38,7 +38,7 @@ for(let product of products){
 
     // product price//
     const price = document.createElement("p");
-    price.classList.add("card-price");
+    price.classList.add("card-price","d-flex","align-end","gap-sm");
     price.innerText = `Rs ${product.price}`;
  
     //product oldprice//
@@ -52,6 +52,7 @@ for(let product of products){
     discount.classList.add("discount");
     discount.innerText = `( ${product.discount} % OFF)`;
     price.appendChild(discount);
+    DescriptionContainer.appendChild(price);
 
     //rating container//
     const ratings = document.createElement("p");
@@ -60,15 +61,34 @@ for(let product of products){
     const rating = document.createElement("span");
     rating.innerText = product.rating;
     ratings.appendChild(rating);
-
+    
 
     const star = document.createElement("span");
     star.classList.add("material-icons-outlined")
     star.innerText = product.star;
     ratings.appendChild(star);
+    DescriptionContainer.appendChild(ratings);
+    cardDetailsContainer.appendChild(DescriptionContainer);
+
+
+    //call to action button container//
+     const ctabutton = document.createElement("div");
+     ctabutton.classList.add("cta-btn");
+     const cartbutton = document.createElement("button");
+     cartbutton.classList.add("button","btn-primary", "btn-icon", "cart-btn" ,"d-flex" ,"align-center" , "justify-center" , "gap cursor ","btn-margin")
+     const cart = document.createElement("div");
+     cart.classList.add("material-icons-outlined");
+     cart.innerText = "shopping_cart";
+     cartbutton.appendChild(cart);
+     cartbutton.innerText = "Add to Cart";
+     ctabutton.appendChild(cartbutton);
+     cardDetailsContainer.appendChild(ctabutton);
+
+
 
     cardContainer.appendChild(imageContainer);
     cardContainer.appendChild(cardDetailsContainer);
+    
 
 
     productcontainer.appendChild(cardContainer);
